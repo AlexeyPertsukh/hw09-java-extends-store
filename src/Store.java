@@ -56,10 +56,16 @@ public class Store {
 
 
         } while(! exit);
-
-        My.printColorYellow("JAVA A01 \"ШАГ\", Запорожье 2021");    //by
+        printOnEnd();
     }
     //===================================================================
+
+    private void printOnEnd() {
+        System.out.println();
+        My.printlnColorYellow("JAVA A01 \"ШАГ\", Запорожье 2021");    //by
+        My.printlnColorYellow("https://github.com/AlexeyPertsukh/hw09-java-extends-store");
+    }
+
 
     //Ввод команд
     private void inputCmd(int cmd) {
