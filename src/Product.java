@@ -46,11 +46,11 @@ public class Product {
         return str;
     }
 
-    public void info(){
+    public void printInfo(){
         System.out.println(getStrInfo());
     }
 
-    public void smallInfo() {
+    public void printSmallInfo() {
 
     }
 

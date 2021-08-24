@@ -27,8 +27,8 @@ public class Refrigerator extends Product {
     }
 
     @Override
-    public void info() {
-        super.info();
+    public void printInfo() {
+        super.printInfo();
         String str = String.format("%.0f л", volume);
         System.out.printf("Объем.....................        %6s   \n", str);
         System.out.printf("Класс энергопотребления...        %6s     \n", energyClass);
@@ -36,7 +36,7 @@ public class Refrigerator extends Product {
     }
 
     @Override
-    public void smallInfo() {
+    public void printSmallInfo() {
         System.out.println(super.getStrInfo());
     }
 

@@ -27,8 +27,8 @@ public class Washer extends Product {
     }
 
     @Override
-    public void info() {
-        super.info();
+    public void printInfo() {
+        super.printInfo();
         String str = String.format("%6.1f кг", weightLaundry);
         System.out.printf("Максимальный вес белья...   %12s      \n", str);
         str = String.format("%6.2f кВт*ч", powerUsage);
@@ -38,7 +38,7 @@ public class Washer extends Product {
     }
 
     @Override
-    public void smallInfo() {
+    public void printSmallInfo() {
         System.out.println(super.getStrInfo());
     }
 

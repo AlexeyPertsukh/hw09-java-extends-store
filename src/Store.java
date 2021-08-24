@@ -293,7 +293,7 @@ public class Store {
         //краткие характеристики товара
         for (int i = 0; i < products[type].length; i++) {
             System.out.print((i + 1) + ". ");
-            products[type][i].smallInfo();
+            products[type][i].printSmallInfo();
         }
 
         printFooter(FOOTER_STR_CMD_CATEGORY);
@@ -319,7 +319,7 @@ public class Store {
 
         printHeadline("СПЕЦИФИКАЦИЯ ТОВАРА");
         System.out.println(prod.getProductCategory());
-        prod.info();
+        prod.printInfo();
         printFooter(FOOTER_STR_SPECIFICATION);
     }
 

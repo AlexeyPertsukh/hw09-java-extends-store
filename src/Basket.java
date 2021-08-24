@@ -54,7 +54,7 @@ public class Basket {
 
         for (int i = 0; i < products.length; i++) {
             System.out.printf("%d. %s \n", i +1, products[i].getProductCategory() );
-            products[i].info();
+            products[i].printInfo();
             System.out.println();
         }
     }

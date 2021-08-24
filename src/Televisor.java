@@ -29,8 +29,8 @@ public class Televisor extends Product {
 
 
     @Override
-    public void info() {
-        super.info();
+    public void printInfo() {
+        super.printInfo();
         String str;
 
         str = String.format("%6.0f", screenDiagonal);
@@ -42,8 +42,8 @@ public class Televisor extends Product {
     }
 
     @Override
-    public void smallInfo() {
-        super.info();
+    public void printSmallInfo() {
+        super.printInfo();
     }
 
     @Override
