@@ -7,6 +7,4 @@ Lesson theme:
 
 [20.02.21] 
 
-a
-
 
