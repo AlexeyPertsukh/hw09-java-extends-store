@@ -4,10 +4,6 @@ public class Product {
     private String model;
     private double price;
 
-    public Product() {
-        this("noname", "noname", 0);
-    }
-
     public Product(String brand, String model, double price) {
         this.brand = brand;
         this.model = model;

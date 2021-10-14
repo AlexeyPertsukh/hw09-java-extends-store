@@ -4,10 +4,6 @@ public class Washer extends Product {
     public double powerUsage;        //энергопотребление кВт*ч
     public double waterUsage;        // потребление воды за одну стирку, л.
 
-    public Washer() {
-        this( "noname", "noname", 0, 0, 0, 0);
-    }
-
     public Washer(String brand, String model, double price, double weightLaundry, double powerUsage, double waterUsage) {
         super(brand, model, price);
         this.weightLaundry = weightLaundry;

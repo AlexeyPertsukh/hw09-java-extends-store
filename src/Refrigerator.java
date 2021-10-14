@@ -5,10 +5,6 @@ public class Refrigerator extends Product {
     private String  energyClass;    //класс энергопотребления, напр. "A++"
     private double  powerUsageYear; //годовое энергопотребление, кВт*год
 
-    public Refrigerator() {
-        this("noname", "noname", 0, 0, "unknown", 0);
-    }
-
     public Refrigerator(String brand, String model, double price, double volume, String energyClass, double powerUsageYear) {
         super(brand, model, price);
         this.volume = volume;

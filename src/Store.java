@@ -36,19 +36,18 @@ public class Store {
         loadPageMaster();       //открываем главную страницу
 
         //пока не введем команду на выход - крутимся
-        int cmd;
+        int command;
         do{
             System.out.print("Введите команду: ");
             String strCmd = sc.next();
 
             if(Util.isInteger(strCmd)) {
-                cmd = Integer.parseInt(strCmd);
-                inputCmd(cmd);
+                command = Integer.parseInt(strCmd);
+                processCommand(command);
             }
             else {
              Color.printlnColorYellow("Недопустимая команда");
             }
-
 
         } while(! exit);
         printOnEnd();
@@ -64,7 +63,7 @@ public class Store {
 
 
     //Ввод команд
-    private void inputCmd(int cmd) {
+    private void processCommand(int cmd) {
 
         //===команды на главной
         if (activePage == PAGE_MASTER) {

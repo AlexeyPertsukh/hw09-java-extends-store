@@ -5,11 +5,6 @@ public class Televisor extends Product {
     private String screenResolution;    //разрешение экрана, напр. "1920х1080"
     private String os;                  //операционная система
 
-
-    public Televisor() {
-        this("noname", "noname", 0, 0, "0x0", "none");
-    }
-
     public Televisor(String brand, String model, double price, double screenDiagonal, String screenResolution, String os ) {
         super(brand, model, price);
         this.screenDiagonal = screenDiagonal;
