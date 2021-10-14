@@ -3,15 +3,15 @@ import java.util.Scanner;
 //Магазин
 public class Store {
 
-    Televisor[]     televisors;
-    Refrigerator[]  refrigerators;
-    Washer[]        washers;
-    Basket          basket;
-    Product         curProd;
-    boolean         exit;
-    int             activePage; //номер активной страницы магазина
-    int             prevPage;
-    Scanner sc;
+    private Televisor[] televisors;
+    private Refrigerator[] refrigerators;
+    private Washer[] washers;
+    private Basket basket;
+    private Product curProd;
+    private boolean exit;
+    private int activePage; //номер активной страницы магазина
+    private int prevPage;
+    private final Scanner sc;
 
     private final static int PAGE_MASTER = 0;
     private final static int PAGE_TELEVISOR = 1;
@@ -20,11 +20,6 @@ public class Store {
     private final static int PAGE_BASKET = 4;
     private final static int PAGE_SPECIFICATION = 5;
 
-
-    private final String FOOTER_STR_CMD_MASTER          = "Команды: 1 - Телевизоры,  2 - Холодильники, 3 - Стиральные машины, 4 - Корзина     [0 - ВЫХОД]";
-    private final String FOOTER_STR_CMD_CATEGORY        = "Команды: 0 - Главная страница,  НОМЕР_ТОВАРА - посмотреть характеристики товара     ";
-    private final String FOOTER_STR_CMD_BASKET          = "Команды: 0 - Главная страница,  НОМЕР_ТОВАРА - Удалить товар из корзины     ";
-    private final String FOOTER_STR_SPECIFICATION       = "Команды: 0 - Вернуться назад,  1 - добавитиь товар в корзину,  2 - перейти в корзину,  3 - главная страница     ";
 
     public Store() {
         sc = new Scanner(System.in);
@@ -63,6 +58,7 @@ public class Store {
     private void printOnEnd() {
         System.out.println();
         My.printlnColorYellow("JAVA A01 \"ШАГ\", Запорожье 2021");    //by
+        My.printlnColorYellow("Перцух Алексей");
         My.printlnColorYellow("https://github.com/AlexeyPertsukh/hw09-java-extends-store");
     }
 
@@ -192,9 +188,7 @@ public class Store {
     //Добавление телевизоров
     private void addTelevisor(String brand, String model, double price, double screenDiagonal, String screenResolution, String os) {
         Televisor[] tmp = new Televisor[televisors.length + 1];
-        for (int i = 0; i < televisors.length; i++) {
-            tmp[i] = televisors[i];
-        }
+        System.arraycopy(televisors, 0, tmp, 0, televisors.length);
 
         tmp[tmp.length - 1] = new Televisor(brand, model, price, screenDiagonal, screenResolution, os);
         televisors = tmp;
@@ -203,9 +197,7 @@ public class Store {
     //Добавление холодильников
     private void addRefrigerator(String brand, String model, double price, double volume, String energyClass, double powerUsageYear) {
         Refrigerator[] tmp = new Refrigerator[refrigerators.length + 1];
-        for (int i = 0; i < refrigerators.length; i++) {
-            tmp[i] = refrigerators[i];
-        }
+        System.arraycopy(refrigerators, 0, tmp, 0, refrigerators.length);
 
         tmp[tmp.length - 1] = new Refrigerator(brand, model, price, volume, energyClass, powerUsageYear);
         refrigerators = tmp;
@@ -214,9 +206,7 @@ public class Store {
     //Добавление стиралок
     private void addWasher(String brand, String model, double price, double weightLaundry, double powerUsage, double waterUsage) {
         Washer[] tmp = new Washer[washers.length + 1];
-        for (int i = 0; i < washers.length; i++) {
-            tmp[i] = washers[i];
-        }
+        System.arraycopy(washers, 0, tmp, 0, washers.length);
 
         tmp[tmp.length - 1] = new Washer(brand, model, price, weightLaundry, powerUsage, waterUsage);
         washers = tmp;
@@ -272,6 +262,7 @@ public class Store {
 
             System.out.println();
         }
+        String FOOTER_STR_CMD_MASTER = "Команды: 1 - Телевизоры,  2 - Холодильники, 3 - Стиральные машины, 4 - Корзина     [0 - ВЫХОД]";
         printFooter(FOOTER_STR_CMD_MASTER);
     }
 
@@ -296,6 +287,7 @@ public class Store {
             products[type][i].printSmallInfo();
         }
 
+        String FOOTER_STR_CMD_CATEGORY = "Команды: 0 - Главная страница,  НОМЕР_ТОВАРА - посмотреть характеристики товара     ";
         printFooter(FOOTER_STR_CMD_CATEGORY);
     }
 
@@ -306,6 +298,7 @@ public class Store {
 
         printHeadline("КОРЗИНА ЗАКАЗОВ");
         basket.info();
+        String FOOTER_STR_CMD_BASKET = "Команды: 0 - Главная страница,  НОМЕР_ТОВАРА - Удалить товар из корзины     ";
         printFooter(FOOTER_STR_CMD_BASKET);
 
     }
@@ -320,6 +313,7 @@ public class Store {
         printHeadline("СПЕЦИФИКАЦИЯ ТОВАРА");
         System.out.println(prod.getProductCategory());
         prod.printInfo();
+        String FOOTER_STR_SPECIFICATION = "Команды: 0 - Вернуться назад,  1 - добавитиь товар в корзину,  2 - перейти в корзину,  3 - главная страница     ";
         printFooter(FOOTER_STR_SPECIFICATION);
     }
 
