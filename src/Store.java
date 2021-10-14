@@ -41,12 +41,12 @@ public class Store {
             System.out.print("Введите команду: ");
             String strCmd = sc.next();
 
-            if(My.isInteger(strCmd)) {
+            if(Util.isInteger(strCmd)) {
                 cmd = Integer.parseInt(strCmd);
                 inputCmd(cmd);
             }
             else {
-             My.printlnColorYellow("Недопустимая команда");
+             Color.printlnColorYellow("Недопустимая команда");
             }
 
 
@@ -57,9 +57,9 @@ public class Store {
 
     private void printOnEnd() {
         System.out.println();
-        My.printlnColorYellow("JAVA A01 \"ШАГ\", Запорожье 2021");    //by
-        My.printlnColorYellow("Перцух Алексей");
-        My.printlnColorYellow("https://github.com/AlexeyPertsukh/hw09-java-extends-store");
+        Color.printlnColorYellow("JAVA A01 \"ШАГ\", Запорожье 2021");    //by
+        Color.printlnColorYellow("Перцух Алексей");
+        Color.printlnColorYellow("https://github.com/AlexeyPertsukh/hw09-java-extends-store");
     }
 
 
@@ -81,7 +81,7 @@ public class Store {
                     loadPageBasket();
                     return;
                 default:
-                    My.printlnColorYellow("Неизвестная команда");
+                    Color.printlnColorYellow("Неизвестная команда");
                     return;
             }
         }
@@ -104,7 +104,7 @@ public class Store {
                 loadPageSpecification(products[category][num]);
             }
             else {
-                My.printlnColorYellow("Нет товара с номером " + cmd);
+                Color.printlnColorYellow("Нет товара с номером " + cmd);
             }
 
             return;
@@ -121,10 +121,10 @@ public class Store {
                     boolean status = basket.add(curProd);   //false если товар уже есть в корзине
                     if(status) {
                         String str = curProd.getBrand() + " " + curProd.getModel() + ", " + curProd.getPrice() + " грн.";
-                        My.printlnColorYellow("В корзину добавлен товар: " + str);
+                        Color.printlnColorYellow("В корзину добавлен товар: " + str);
                     }
                     else {
-                        My.printlnColorYellow("Товар уже есть в корзине");
+                        Color.printlnColorYellow("Товар уже есть в корзине");
                     }
                     return;
                 case 2:
@@ -134,7 +134,7 @@ public class Store {
                     loadPageMaster();
                     return;
                 default:
-                    My.printlnColorYellow("Неизвестная команда");
+                    Color.printlnColorYellow("Неизвестная команда");
                     return;
             }
         }
@@ -151,17 +151,17 @@ public class Store {
                 String nameDelProduct = basket.del(num);       //при норм. удалении возвращает инфу удаленного товара
                 if (nameDelProduct.compareToIgnoreCase("") != 0) {
                     loadPageBasket();
-                    My.printlnColorYellow("Из корзины удален товар: " + nameDelProduct);
+                    Color.printlnColorYellow("Из корзины удален товар: " + nameDelProduct);
                     return;
                 } else {
-                    My.printlnColorYellow("В корзине нет товара с номером " + cmd);
+                    Color.printlnColorYellow("В корзине нет товара с номером " + cmd);
                     return;
                 }
             }
         }
 
         //Ввели неизвестную команду
-        My.printlnColorYellow("Неизвестная команда");
+        Color.printlnColorYellow("Неизвестная команда");
     }
 
 
@@ -214,16 +214,16 @@ public class Store {
 
     //верхняя панель
     private void printHeadline(String str) {
-        My.printlnColorBlue("==================================================================================================================================================");
-        My.printlnColorBlue("КОНСОЛЬНЫЙ МАГАЗИН");
-        My.printlnColorBlue(str);
-        My.printlnColorBlue("==================================================================================================================================================");
+        Color.printlnColorBlue("==================================================================================================================================================");
+        Color.printlnColorBlue("КОНСОЛЬНЫЙ МАГАЗИН");
+        Color.printlnColorBlue(str);
+        Color.printlnColorBlue("==================================================================================================================================================");
     }
 
     //нижняя панель
     private void printFooter(String str) {
         System.out.println("...................................................................................................................................................");
-        My.printlnColorGreen(str);
+        Color.printlnColorGreen(str);
     }
 
     //Загружает главную страницу
@@ -269,7 +269,7 @@ public class Store {
     //загружает страницу с категорией товаров
     private void loadPageCategory(int type) {
         if(type < 0 || type >= 3) {
-            My.printlnColorYellow("Ошибка 404: страница не найдена");
+            Color.printlnColorYellow("Ошибка 404: страница не найдена");
             return;
         }
 
